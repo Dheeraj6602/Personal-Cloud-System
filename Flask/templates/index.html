@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cloud Storage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/index.css')}}">
+    <link rel="script" type="js" href="{{ url_for('static',filename='/index.js')}}">
+    <link rel="script" type="js" href="{{ url_for('static',filename='/index.js')}}">
+    <script src="{{ url_for('static',filename='/index.js')}}"></script>
+</head>
+
+<body>
+    <header>
+        <a href="{{ url_for('static',filename='/index.html')}}"><img src="{{ url_for('static',filename='/logo.jpeg')}}" class="sb_logo" alt="Logo"></a>
+        <h1>PERSONAL CLOUD STORAGE SYSTEM</h1>
+        <nav>
+            <ul>
+                <li><a href="#login" onclick="toggleSection('login')">Login</a></li>
+                <li><a href="#register" onclick="toggleSection('register')">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="alert_register" {% if show_alert_account_created %}style="display:block;" {% else %}style="display:none;" {% endif %}>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Your account created, please Login to your account.
+    </div>
+
+    <div class="alert_login" {% if show_alert_user_does_not_exist %}style="display:block;" {% else %}style="display:none;" {% endif %}>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        Invalid credentials, Login again.
+    </div>
+
+    <main>
+        <section id="register">
+            <h2>Register</h2>
+            <form action="register" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+            
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+            
+                <button class="button" type="submit"><span>Register</span></button>
+            </form>
+        </section>
+
+        
+
+        <section id="login">
+            <h2>Login</h2>
+
+            <form action="login" method="post">
+                <label for="loginEmail">Email:</label>
+                <input type="email" id="loginEmail" name="loginEmail" required><br>
+
+                <label for="loginPassword">Password:</label>
+                <input type="password" id="loginPassword" name="loginPassword" required><br>
+
+                <button class="button" type="submit"><span>Login</span></button>
+        </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Personal Cloud Storage</p>
+    </footer>
+
+</body>
+
+</html>

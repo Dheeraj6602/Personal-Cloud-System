@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cloud Storage - Home</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/home.css')}}">
+    <link rel="script" type="js" href="{{ url_for('static',filename='/home.js')}}">
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('load_home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('load_upload_page') }}">Upload</a></li>
+            <li><a href="{{ url_for('load_account_page') }}">Account</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="file-display">
+        <table>
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Date Modified</th>
+                    <th>Type</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody id="file-list" class="file-row">
+                <!-- File information will be populated here -->
+            </tbody>
+        </table>
+    </section>
+    <!--
+        <script src="home.js"></script>
+    -->
+</body>
+
+</html>

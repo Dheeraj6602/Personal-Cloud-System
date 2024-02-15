@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(191, 223, 229);
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+    /* Align items to the right */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    /* Display items horizontally */
+    margin-left: 10px;
+    /* Add some spacing between items */
+
+}
+
+nav a {
+    font-weight: 300;
+    font-size: large;
+    font: 1em sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    /* Add padding to make the clickable area larger */
+    border-radius: 5px;
+    /* Add rounded corners for a modern look */
+    transition: background-color 0.3s;
+    /* Add smooth transition effect */
+    background-color: rgb(75, 143, 175);
+}
+
+nav a:hover {
+    background-color: #555;
+    /* Change background color on hover */
+}
+
+nav a:active {
+    background-color: #777;
+    /* Change background color on click */
+}
+
+h1 {
+    text-align: center;
+}
+
+.account-info,
+.change-password {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+}
+
+label,
+input {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Example of adding some margin to the right of the label */
+.label-with-margin {
+    margin-right: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.change-password-btn, .update-account-btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.change-password-btn, .update-account-btn:hover {
+    background-color: #444;
+}
+
+.change-password-btn, .update-account-btn:active {
+    background-color: #222;
+}
+
+.flash-messages {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.flash-message.success {
+    background-color: #4CAF50;
+    /* Green */
+}
+
+.flash-message.error {
+    background-color: #f44336;
+    /* Red */
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cloud Storage - Account</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/account.css')}}">
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('load_home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('load_upload_page') }}">Upload</a></li>
+            <li><a href="{{ url_for('load_account_page') }}">Account</a></li>
+        </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <h1>Welcome to Your Account</h1>
+
+    <div class="account-info">
+        <form id="updateAccountForm" action="{{ url_for('update_account') }}" method="post">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" value="{{ user.username }}" required><br>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" readonly><br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" value="{{ user.phone }}"><br>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="{{ user.address }}"><br>
+            
+            <label for="payment">Payment Information:</label>
+            <input type="text" id="payment" name="payment" value="{{ user.payment_info }}"required><br>
+            
+            <p>Storage Left: 500 out of 1 GB</p>
+            <input class="update-account-btn" type="submit" value="Update Account">
+        </form>
+    </div>
+
+    <div class="change-password">
+        <h2>Change Password</h2>
+        <form id="changePasswordForm" action="{{ url_for('change_password') }}" method="post">
+            <input type="password" name="oldPassword" placeholder="Current Password" required><br>
+            <input type="password" name="newPassword" placeholder="New Password" required><br>
+            <input type="password" name="confirmPassword" placeholder="Confirm New Password" required><br>
+            <input type="submit" class="change-password-btn" value="Change Password">
+        </form>
+    </div>
+
+</body>
+
+</html>

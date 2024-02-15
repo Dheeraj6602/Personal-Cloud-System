@@ -1,0 +1,94 @@
+/* Add your custom styles for the upload page */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(191, 223, 229);
+}
+
+h1 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.upload-form {
+    max-width: 400px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-form input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.upload-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.upload-btn:hover {
+    background: #0056b3;
+}
+
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: right;
+    /* Align items to the right */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    /* Display items horizontally */
+    margin-left: 10px;
+    /* Add some spacing between items */
+
+}
+
+nav a {
+    font-weight: 300;
+    font-size: large;
+    font: 1em sans-serif;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    /* Add padding to make the clickable area larger */
+    border-radius: 5px;
+    /* Add rounded corners for a modern look */
+    transition: background-color 0.3s;
+    /* Add smooth transition effect */
+    background-color: rgb(75, 143, 175);
+}
+
+nav a:hover {
+    background-color: #555;
+    /* Change background color on hover */
+}
+
+nav a:active {
+    background-color: #777;
+    /* Change background color on click */
+}
+
+.lable-file{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: medium;
+    font-weight: 100;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Cloud Storage - Upload</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='/upload.css')}}">
+    <link rel="script" type="js" href="{{ url_for('static',filename='/upload.js')}}">
+</head>
+
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('load_home_page') }}">Home</a></li>
+            <li><a href="{{ url_for('load_upload_page') }}">Upload</a></li>
+            <li><a href="{{ url_for('load_account_page') }}">Account</a></li>
+        </ul>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul class=flashes>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+
+    <h1>Upload Files</h1>
+
+    <div class="upload-form">
+        <form id="fileUploadForm" action="{{ presigned_url }}" method="post" enctype="multipart/form-data">
+            <label for="file" class="lable-file">Choose file here.</label><br><br>
+            <input type="file" name="file-to-save" id="file" required><br>
+            <input type="hidden" name="key" value="{{ file_name }}">
+            <input type="submit" class="upload-btn" value="Upload">
+        </form>
+    </div>
+
+    {% for file in files %}
+    <div>{{ file.original_filename }} - <a
+            href="https://{{ file.bucket }}.s3.{{ file.region }}.amazonaws.com/{{ file.filename }}">{{ file.filename }}</a>
+    </div>
+    {%endfor%}
+
+    <script src="/Flask/static/upload.js"></script> <!-- Add your JavaScript file for upload page -->
+</body>
+
+</html>
